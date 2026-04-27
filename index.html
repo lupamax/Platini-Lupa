@@ -12,40 +12,28 @@ body {
   color: white;
 }
 
+/* HEADER NOVO */
 header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 25px;
   background: black;
-  padding: 20px;
-  text-align: center;
 }
 
-/* LOGO */
+/* LOGO ESQUERDA */
 .logo {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 180px;
-  position: relative;
-  overflow: hidden;
+  gap: 10px;
 }
 
-.logo::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle at 30% 30%, #2aa8ff, #003b73);
-  border-radius: 50%;
-  filter: blur(12px);
-  opacity: 0.9;
-}
-
-.logo h1 {
-  position: relative;
-  color: white;
-  font-family: Arial Black;
-  font-size: 32px;
-  letter-spacing: 2px;
-  text-shadow: 0 0 10px rgba(0,180,255,0.8);
+.juliet {
+  width: 45px;
+  height: 20px;
+  border: 3px solid #2aa8ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #2aa8ff;
 }
 
 /* GRID */
@@ -122,10 +110,20 @@ header {
 <body>
 
 <header>
+
+  <!-- LOGO ESQUERDA -->
   <div class="logo">
-    <h1>PLATINI LUPAS</h1>
+    <div class="juliet"></div>
+    <h1 style="color:white;font-family:Arial Black;font-size:20px;margin:0;letter-spacing:2px;">
+      PLATINI LUPAS
+    </h1>
   </div>
-  <p>Escolha sua Juliet 👇</p>
+
+  <!-- DIREITA -->
+  <p style="margin:0;color:white;font-family:Arial;">
+    Escolha sua Juliet 👇
+  </p>
+
 </header>
 
 <section class="grid" id="grid"></section>
