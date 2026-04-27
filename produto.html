@@ -28,6 +28,11 @@ h1 {
   margin-top: 20px;
 }
 
+.desc {
+  color: #ccc;
+  margin: 10px 0;
+}
+
 .preco {
   font-size: 28px;
   color: gold;
@@ -60,6 +65,8 @@ h1 {
 
   <h1 id="nome"></h1>
 
+  <p class="desc" id="desc"></p>
+
   <img id="img">
 
   <p class="preco">R$ 70</p>
@@ -73,10 +80,8 @@ h1 {
 <script>
 const params = new URLSearchParams(window.location.search);
 
-// nome do produto
 document.getElementById("nome").innerText = params.get("nome");
-
-// imagem do produto
+document.getElementById("desc").innerText = params.get("desc");
 document.getElementById("img").src = "https://picsum.photos/600?random=" + params.get("img");
 </script>
 
