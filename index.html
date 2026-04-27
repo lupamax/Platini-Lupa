@@ -37,13 +37,8 @@ header {
   border-radius: 10px;
 }
 
-.card h3 {
-  margin: 10px 0;
-}
-
 .preco {
   color: gold;
-  font-size: 18px;
 }
 </style>
 </head>
@@ -59,20 +54,36 @@ header {
 
 <script>
 const produtos = [
-  "Juliet Chrome","Juliet Black","Juliet Gold","Juliet Azul",
-  "Juliet Vermelha","Juliet Prata","Juliet Dark","Juliet Ice",
-  "Juliet Neon","Juliet Smoke","Juliet Polarizada","Juliet X",
-  "Juliet Pro","Juliet Street","Juliet Elite","Juliet Vision",
-  "Juliet Max","Juliet Classic","Juliet Braba","Juliet Top"
+  {nome:"Juliet Chrome", desc:"Lente espelhada, visão limpa e estilo pesado"},
+  {nome:"Juliet Black", desc:"Modelo discreto, combina com tudo"},
+  {nome:"Juliet Gold", desc:"Destaque total, chama atenção por onde passa"},
+  {nome:"Juliet Azul", desc:"Lente azul, estilo moderno"},
+  {nome:"Juliet Vermelha", desc:"Visual agressivo e diferenciado"},
+  {nome:"Juliet Prata", desc:"Clássica e elegante"},
+  {nome:"Juliet Dark", desc:"Escura, estilo chave"},
+  {nome:"Juliet Ice", desc:"Clara, estilo gelo"},
+  {nome:"Juliet Neon", desc:"Cor vibrante, presença forte"},
+  {nome:"Juliet Smoke", desc:"Fumê, visão confortável"},
+  {nome:"Juliet Polarizada", desc:"Proteção contra sol forte"},
+  {nome:"Juliet X", desc:"Modelo diferenciado"},
+  {nome:"Juliet Pro", desc:"Linha mais avançada"},
+  {nome:"Juliet Street", desc:"Estilo rua"},
+  {nome:"Juliet Elite", desc:"Acabamento premium"},
+  {nome:"Juliet Vision", desc:"Alta nitidez"},
+  {nome:"Juliet Max", desc:"Mais robusta"},
+  {nome:"Juliet Classic", desc:"Modelo tradicional"},
+  {nome:"Juliet Braba", desc:"Visual pesado"},
+  {nome:"Juliet Top", desc:"Uma das mais vendidas"}
 ];
 
-produtos.forEach((nome, i) => {
+produtos.forEach((p, i) => {
   document.write(`
     <div class="card">
-      <a href="produto.html?nome=${nome}&img=${i}" target="_blank">
+      <a href="produto.html?nome=${p.nome}&img=${i}&desc=${p.desc}" target="_blank">
         <img src="https://picsum.photos/400?random=${i}">
       </a>
-      <h3>${nome}</h3>
+      <h3>${p.nome}</h3>
+      <p>${p.desc}</p>
       <p class="preco">R$ ${70 + (i % 3)*5}</p>
     </div>
   `)
