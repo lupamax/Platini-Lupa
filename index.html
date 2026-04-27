@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Platini Lupas</title>
 
-<!-- FAVICON (ícone da aba) -->
+<!-- ÍCONE DA ABA (favicon) -->
 <link rel="icon" type="image/png" href="https://i.imgur.com/6XKcV0Q.png">
 
 <style>
@@ -39,13 +39,12 @@ header {
   padding: 20px;
 }
 
-/* LINK */
+/* CARD */
 .card-link {
   text-decoration: none;
   color: inherit;
 }
 
-/* CARD */
 .card {
   background: #1a1a1a;
   border-radius: 10px;
@@ -59,7 +58,7 @@ header {
   transform: scale(1.05);
 }
 
-/* BOLHA */
+/* efeito bolha */
 .card::before {
   content: "";
   position: absolute;
@@ -105,14 +104,31 @@ header {
 
 <header>
 
-  <!-- LOGO COM JULIET -->
+  <!-- LOGO COM JULIET DESENHADA -->
   <div class="logo">
 
-    <img 
-      src="https://i.imgur.com/6XKcV0Q.png"
-      alt="Juliet Azul"
-      style="width:55px;height:auto;filter:drop-shadow(0 0 6px #2aa8ff);"
-    >
+    <!-- JULIET (OCULOS AZUL SVG) -->
+    <svg width="70" height="30" viewBox="0 0 120 50" fill="none">
+      
+      <!-- lente esquerda -->
+      <rect x="5" y="10" width="45" height="25" rx="10"
+        stroke="#2aa8ff" stroke-width="4"
+        fill="rgba(42,168,255,0.15)"/>
+
+      <!-- lente direita -->
+      <rect x="70" y="10" width="45" height="25" rx="10"
+        stroke="#2aa8ff" stroke-width="4"
+        fill="rgba(42,168,255,0.15)"/>
+
+      <!-- ponte -->
+      <line x1="50" y1="22" x2="70" y2="22"
+        stroke="#2aa8ff" stroke-width="4"/>
+
+      <!-- brilho -->
+      <circle cx="25" cy="18" r="3" fill="#ffffff" opacity="0.6"/>
+      <circle cx="90" cy="18" r="3" fill="#ffffff" opacity="0.6"/>
+
+    </svg>
 
     <h1 style="
       color:white;
