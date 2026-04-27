@@ -25,7 +25,7 @@ header {
   padding: 20px;
 }
 
-/* CARD COM EFEITO NOVO */
+/* CARD */
 .card {
   background: #1a1a1a;
   padding: 10px;
@@ -40,6 +40,7 @@ header {
   transform: scale(1.05);
 }
 
+/* BOLHA */
 .card::before {
   content: "";
   position: absolute;
@@ -52,6 +53,7 @@ header {
   transform: translate(-50%, -50%);
   transition: width 0.4s ease, height 0.4s ease;
   z-index: 0;
+  pointer-events: none;
 }
 
 .card:hover::before {
@@ -59,9 +61,13 @@ header {
   height: 300px;
 }
 
-.card * {
+/* garante conteúdo na frente (sem sumir imagem) */
+.card img,
+.card h3,
+.card p,
+.card a {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .card img {
@@ -116,7 +122,7 @@ produtos.forEach((p, i) => {
   grid.innerHTML += `
     <div class="card">
       <a href="produto.html?nome=${encodeURIComponent(p.nome)}&desc=${encodeURIComponent(p.desc)}&img=${i}&preco=${preco}">
-        <img src="https://source.unsplash.com/400x400/?sunglasses,${i}">
+        <img src="https://source.unsplash.com/400x400/?sunglasses,${i}" alt="${p.nome}">
       </a>
 
       <h3>${p.nome}</h3>
