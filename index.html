@@ -25,11 +25,43 @@ header {
   padding: 20px;
 }
 
+/* CARD COM EFEITO NOVO */
 .card {
   background: #1a1a1a;
   padding: 10px;
   border-radius: 10px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 215, 0, 0.15);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.card:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.card * {
+  position: relative;
+  z-index: 1;
 }
 
 .card img {
@@ -50,7 +82,7 @@ header {
   <p>Escolha sua Juliet 👇</p>
 </header>
 
-<section class="grid">
+<section class="grid" id="grid"></section>
 
 <script>
 const produtos = [
@@ -76,21 +108,24 @@ const produtos = [
   {nome:"Juliet Top", desc:"Uma das mais procuradas, sucesso de vendas"}
 ];
 
+const grid = document.getElementById("grid");
+
 produtos.forEach((p, i) => {
-  document.write(`
+  const preco = 70 + (i % 3) * 5;
+
+  grid.innerHTML += `
     <div class="card">
-      <a href="produto.html?nome=${p.nome}&img=${i}&desc=${p.desc}">
-        <img src="https://picsum.photos/400?random=${i}">
+      <a href="produto.html?nome=${encodeURIComponent(p.nome)}&desc=${encodeURIComponent(p.desc)}&img=${i}&preco=${preco}">
+        <img src="https://source.unsplash.com/400x400/?sunglasses,${i}">
       </a>
+
       <h3>${p.nome}</h3>
       <p>${p.desc}</p>
-      <p class="preco">R$ ${70 + (i % 3)*5}</p>
+      <p class="preco">R$ ${preco}</p>
     </div>
-  `)
+  `;
 });
 </script>
-
-</section>
 
 </body>
 </html>
