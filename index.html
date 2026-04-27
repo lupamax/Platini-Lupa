@@ -54,32 +54,32 @@ header {
 
 <script>
 const produtos = [
-  {nome:"Juliet Chrome", desc:"Lente espelhada, visão limpa e estilo pesado"},
-  {nome:"Juliet Black", desc:"Modelo discreto, combina com tudo"},
-  {nome:"Juliet Gold", desc:"Destaque total, chama atenção por onde passa"},
-  {nome:"Juliet Azul", desc:"Lente azul, estilo moderno"},
-  {nome:"Juliet Vermelha", desc:"Visual agressivo e diferenciado"},
-  {nome:"Juliet Prata", desc:"Clássica e elegante"},
-  {nome:"Juliet Dark", desc:"Escura, estilo chave"},
-  {nome:"Juliet Ice", desc:"Clara, estilo gelo"},
-  {nome:"Juliet Neon", desc:"Cor vibrante, presença forte"},
-  {nome:"Juliet Smoke", desc:"Fumê, visão confortável"},
-  {nome:"Juliet Polarizada", desc:"Proteção contra sol forte"},
-  {nome:"Juliet X", desc:"Modelo diferenciado"},
-  {nome:"Juliet Pro", desc:"Linha mais avançada"},
-  {nome:"Juliet Street", desc:"Estilo rua"},
-  {nome:"Juliet Elite", desc:"Acabamento premium"},
-  {nome:"Juliet Vision", desc:"Alta nitidez"},
-  {nome:"Juliet Max", desc:"Mais robusta"},
-  {nome:"Juliet Classic", desc:"Modelo tradicional"},
-  {nome:"Juliet Braba", desc:"Visual pesado"},
-  {nome:"Juliet Top", desc:"Uma das mais vendidas"}
+  {nome:"Juliet Chrome", desc:"Lente espelhada com acabamento premium, perfeita pra quem quer destaque e visão limpa no dia a dia"},
+  {nome:"Juliet Black", desc:"Modelo discreto e versátil, combina com qualquer estilo e ocasião"},
+  {nome:"Juliet Gold", desc:"Visual chamativo e elegante, ideal pra quem gosta de presença"},
+  {nome:"Juliet Azul", desc:"Lente azul moderna, estilo diferenciado e confortável"},
+  {nome:"Juliet Vermelha", desc:"Design agressivo, perfeito pra quem quer se destacar"},
+  {nome:"Juliet Prata", desc:"Clássica e sofisticada, nunca sai de moda"},
+  {nome:"Juliet Dark", desc:"Estilo escuro e marcante, ideal pra qualquer rolê"},
+  {nome:"Juliet Ice", desc:"Visual claro e moderno, leve e estiloso"},
+  {nome:"Juliet Neon", desc:"Cor vibrante, chama atenção de longe"},
+  {nome:"Juliet Smoke", desc:"Lente fumê confortável para o dia a dia"},
+  {nome:"Juliet Polarizada", desc:"Proteção contra sol forte com mais conforto visual"},
+  {nome:"Juliet X", desc:"Modelo exclusivo com design diferenciado"},
+  {nome:"Juliet Pro", desc:"Linha avançada com acabamento superior"},
+  {nome:"Juliet Street", desc:"Estilo urbano, perfeita pra quem vive na rua"},
+  {nome:"Juliet Elite", desc:"Acabamento premium com visual sofisticado"},
+  {nome:"Juliet Vision", desc:"Alta nitidez e conforto visual"},
+  {nome:"Juliet Max", desc:"Modelo robusto com presença forte"},
+  {nome:"Juliet Classic", desc:"Modelo tradicional e confiável"},
+  {nome:"Juliet Braba", desc:"Visual pesado, estilo marcante"},
+  {nome:"Juliet Top", desc:"Uma das mais procuradas, sucesso de vendas"}
 ];
 
 produtos.forEach((p, i) => {
   document.write(`
     <div class="card">
-      <a href="produto.html?nome=${p.nome}&img=${i}&desc=${p.desc}" target="_blank">
+      <a href="produto.html?nome=${p.nome}&img=${i}&desc=${p.desc}">
         <img src="https://picsum.photos/400?random=${i}">
       </a>
       <h3>${p.nome}</h3>
