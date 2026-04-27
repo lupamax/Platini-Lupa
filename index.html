@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Platini Lupas</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0d0d0d;
+  color: white;
+}
+
+header {
+  background: black;
+  padding: 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.preco {
+  color: gold;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>PLATINI LUPAS</h1>
+  <p>Escolha sua Juliet 👇</p>
+</header>
+
+<section class="grid">
+
+<script>
+const produtos = [
+  "Juliet Chrome","Juliet Black","Juliet Gold","Juliet Azul",
+  "Juliet Vermelha","Juliet Prata","Juliet Dark","Juliet Ice",
+  "Juliet Neon","Juliet Smoke","Juliet Polarizada","Juliet X",
+  "Juliet Pro","Juliet Street","Juliet Elite","Juliet Vision",
+  "Juliet Max","Juliet Classic","Juliet Braba","Juliet Top"
+];
+
+produtos.forEach((nome, i) => {
+  document.write(`
+    <div class="card">
+      <a href="produto.html?nome=${nome}&img=${i}" target="_blank">
+        <img src="https://picsum.photos/400?random=${i}">
+      </a>
+      <h3>${nome}</h3>
+      <p class="preco">R$ ${70 + (i % 3)*5}</p>
+    </div>
+  `)
+});
+</script>
+
+</section>
+
+</body>
+</html>
