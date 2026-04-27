@@ -25,6 +25,12 @@ header {
   padding: 20px;
 }
 
+/* LINK DO CARD */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* CARD */
 .card {
   background: #1a1a1a;
@@ -61,11 +67,10 @@ header {
   height: 300px;
 }
 
-/* garante conteúdo na frente (sem sumir imagem) */
+/* conteúdo na frente */
 .card img,
 .card h3,
-.card p,
-.card a {
+.card p {
   position: relative;
   z-index: 2;
 }
@@ -120,15 +125,15 @@ produtos.forEach((p, i) => {
   const preco = 70 + (i % 3) * 5;
 
   grid.innerHTML += `
-    <div class="card">
-      <a href="produto.html?nome=${encodeURIComponent(p.nome)}&desc=${encodeURIComponent(p.desc)}&img=${i}&preco=${preco}">
+    <a class="card-link" href="produto.html?nome=${encodeURIComponent(p.nome)}&desc=${encodeURIComponent(p.desc)}&img=${i}&preco=${preco}">
+      <div class="card">
         <img src="https://source.unsplash.com/400x400/?sunglasses,${i}" alt="${p.nome}">
-      </a>
-
-      <h3>${p.nome}</h3>
-      <p>${p.desc}</p>
-      <p class="preco">R$ ${preco}</p>
-    </div>
+        
+        <h3>${p.nome}</h3>
+        <p>${p.desc}</p>
+        <p class="preco">R$ ${preco}</p>
+      </div>
+    </a>
   `;
 });
 </script>
