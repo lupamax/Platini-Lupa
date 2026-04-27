@@ -97,8 +97,10 @@ header {
 
 <section class="grid" id="grid"></section>
 
-<!-- SOM DO CLIQUE -->
-<audio id="click-sound" src="https://actions.google.com/sounds/v1/ui/click.ogg" preload="auto"></audio>
+<!-- 🔊 SOM DO CLIQUE -->
+<audio id="click-sound" preload="auto">
+  <source src="https://actions.google.com/sounds/v1/ui/click.ogg" type="audio/ogg">
+</audio>
 
 <script>
 const produtos = [
@@ -132,24 +134,23 @@ produtos.forEach((p, i) => {
   grid.innerHTML += `
     <a class="card-link" href="produto.html?nome=${encodeURIComponent(p.nome)}&desc=${encodeURIComponent(p.desc)}&img=${i}&preco=${preco}">
       <div class="card">
-        
         <img src="https://picsum.photos/seed/juliet${i}/600/400" alt="${p.nome}">
-        
         <h3>${p.nome}</h3>
         <p>${p.desc}</p>
         <p class="preco">R$ ${preco}</p>
-        
       </div>
     </a>
   `;
 });
 
-// SOM DO CLIQUE
+// 🔊 SOM DO CLIQUE
 const sound = document.getElementById("click-sound");
 
-document.addEventListener("click", function () {
-  sound.currentTime = 0;
-  sound.play();
+document.querySelectorAll(".card-link").forEach(link => {
+  link.addEventListener("click", function () {
+    sound.currentTime = 0;
+    sound.play();
+  });
 });
 </script>
 
