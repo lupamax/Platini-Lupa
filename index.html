@@ -97,6 +97,9 @@ header {
 
 <section class="grid" id="grid"></section>
 
+<!-- SOM DO CLIQUE -->
+<audio id="click-sound" src="https://actions.google.com/sounds/v1/ui/click.ogg" preload="auto"></audio>
+
 <script>
 const produtos = [
   {nome:"Juliet Chrome", desc:"Lente espelhada com acabamento premium, perfeita pra quem quer destaque e visão limpa no dia a dia"},
@@ -139,6 +142,14 @@ produtos.forEach((p, i) => {
       </div>
     </a>
   `;
+});
+
+// SOM DO CLIQUE
+const sound = document.getElementById("click-sound");
+
+document.addEventListener("click", function () {
+  sound.currentTime = 0;
+  sound.play();
 });
 </script>
 
