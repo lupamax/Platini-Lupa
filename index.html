@@ -18,6 +18,37 @@ header {
   text-align: center;
 }
 
+/* LOGO */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 30% 30%, #2aa8ff, #003b73);
+  border-radius: 50%;
+  filter: blur(12px);
+  opacity: 0.9;
+}
+
+.logo h1 {
+  position: relative;
+  color: white;
+  font-family: Arial Black;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(0,180,255,0.8);
+}
+
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -74,7 +105,7 @@ header {
   z-index: 2;
 }
 
-/* imagem grande */
+/* imagem */
 .card img {
   width: 100%;
   height: 220px;
@@ -91,16 +122,13 @@ header {
 <body>
 
 <header>
-  <h1>PLATINI LUPAS</h1>
+  <div class="logo">
+    <h1>PLATINI LUPAS</h1>
+  </div>
   <p>Escolha sua Juliet 👇</p>
 </header>
 
 <section class="grid" id="grid"></section>
-
-<!-- 🔊 SOM DO CLIQUE -->
-<audio id="click-sound" preload="auto">
-  <source src="https://actions.google.com/sounds/v1/ui/click.ogg" type="audio/ogg">
-</audio>
 
 <script>
 const produtos = [
@@ -141,16 +169,6 @@ produtos.forEach((p, i) => {
       </div>
     </a>
   `;
-});
-
-// 🔊 SOM DO CLIQUE
-const sound = document.getElementById("click-sound");
-
-document.querySelectorAll(".card-link").forEach(link => {
-  link.addEventListener("click", function () {
-    sound.currentTime = 0;
-    sound.play();
-  });
 });
 </script>
 
